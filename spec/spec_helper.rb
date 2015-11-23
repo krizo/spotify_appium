@@ -15,7 +15,8 @@ RSpec.configure do |config|
       caps: capabilities,
       appium_lib: {
         debug: ENV['DEBUG'].to_s.downcase != 'false',
-        wait: 0
+        wait: 0,
+        findInvisibleElements: true,
       }
     }
     @browser = Appium::Driver.new(config).start_driver

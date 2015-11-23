@@ -17,6 +17,8 @@ module CapabilityBuilder
     end
     caps[:app] = ENV['APP']
     caps[:deviceType] = ENV['DEVICE_TYPE'] || 'phone'
+    caps[:noReset] = ENV['NO_RESET'] || false
+    caps[:fullReset] = ENV['FULL_RESET'] || false
     raise('Provide env variable APP with absolute path to the file with Spotify app ') unless caps[:app]
     caps.merge!(options)
     caps.delete_if { |k, v| v.to_s.empty? }
